@@ -70,6 +70,18 @@ public class MainFragment extends Fragment {
 
 
 				});
+				
+		//call webview_test2
+		myView.findViewById(R.id.button5).setOnClickListener(new OnClickListener() {
+		@Override
+					public void onClick(View view) {
+						Intent i = new Intent(getActivity(),HttpsURLconnectiontest.class);
+						startActivity(i);
+						
+					}
+
+
+		});
 		
 		return myView;
 	}

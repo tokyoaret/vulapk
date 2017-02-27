@@ -77,6 +77,11 @@
             android:name=".WebViewTestActivity2"
             android:label="@string/title_activity_web_view_test_activity2" >
         </activity>
+        <activity
+            android:name=".HttpsURLconnectiontest"
+            android:label="@string/title_activity_http_urlconnection"
+            >
+        </activity>
     </application>
 
 </manifest>
