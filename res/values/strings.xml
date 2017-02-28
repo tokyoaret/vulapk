@@ -8,5 +8,6 @@
     <string name="title_activity_web_view_test">WebViewTestActivity</string>
     <string name="title_activity_web_view_test_activity2">WebViewTestActivity2</string>
     <string name="title_activity_http_urlconnection">HttpURLconnection</string>
+    <string name="title_activity_sample_https">SampleHttps</string>
 
 </resources>

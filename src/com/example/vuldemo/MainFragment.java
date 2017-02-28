@@ -82,6 +82,17 @@ public class MainFragment extends Fragment {
 
 
 		});
+		//call samplehttps
+		myView.findViewById(R.id.button6).setOnClickListener(new OnClickListener() {
+		@Override
+						public void onClick(View view) {
+							Intent i = new Intent(getActivity(),SampleHttps.class);
+							startActivity(i);
+							
+						}
+
+
+		});
 		
 		return myView;
 	}

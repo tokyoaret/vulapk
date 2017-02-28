@@ -8,8 +8,8 @@
         android:minSdkVersion="10"
         android:targetSdkVersion="20" />
 
-    <uses-permission android:name="android.permission.INTERNET" >
-    </uses-permission>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
 
     <application
         android:allowBackup="true"
@@ -79,8 +79,11 @@
         </activity>
         <activity
             android:name=".HttpsURLconnectiontest"
-            android:label="@string/title_activity_http_urlconnection"
-            >
+            android:label="@string/title_activity_http_urlconnection" >
+        </activity>
+        <activity
+            android:name=".SampleHttps"
+            android:label="@string/title_activity_sample_https" >
         </activity>
     </application>
 
