@@ -60,15 +60,15 @@ public class SampleHttps extends Activity implements X509TrustManager{
 				if (urlConnection instanceof HttpsURLConnection) {
 					Log.v("hhhhhh","instance");
 					SSLContext context = SSLContext.getInstance("SSL");
-					context.init(null, new TrustManager[]{}, null);
-					SSLSocketFactory sf = context.getSocketFactory();
+					context.init(null, new TrustManager[]{SampleHttps.this}, null);
+					urlConnection.setSSLSocketFactory(context.getSocketFactory());
 					
 					
 					
 					urlConnection.setHostnameVerifier(new HostnameVerifier() {
 	                    @Override
 						public boolean verify(String arg0, SSLSession arg1) {
-							// TODO Auto-generated method stub
+							 //TODO Auto-generated method stub
 							return true;
 						}
 	                });
