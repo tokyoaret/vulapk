@@ -26,8 +26,6 @@ import javax.net.ssl.X509TrustManager;
 
 import org.apache.commons.io.IOUtils;
 
-import com.example.vuldemo.HttpsURLconnectiontest.HttpGetTask;
-
 public class SampleHttps extends Activity implements X509TrustManager{
 	TextView textView;
 	@Override
@@ -39,7 +37,7 @@ public class SampleHttps extends Activity implements X509TrustManager{
 		// 接続先のURLを指定してHTTP GET実行
         URL url = null;
         try {
-            url = new URL("https://line.me/en");
+            url = new URL("https://www.google.co.jp");
             
         } catch (MalformedURLException e) {
             e.printStackTrace();
@@ -54,26 +52,30 @@ public class SampleHttps extends Activity implements X509TrustManager{
 		@Override
         protected String doInBackground(URL... url) {
 			String result = "";
+			HttpsURLConnection urlConnection = null;
 			try {
+				urlConnection = (HttpsURLConnection) url[0].openConnection();
 				
-				HttpURLConnection urlConnection = (HttpURLConnection) url[0].openConnection();
+				
 				if (urlConnection instanceof HttpsURLConnection) {
-					SSLContext context = SSLContext.getInstance("TLS");
+					Log.v("hhhhhh","instance");
+					SSLContext context = SSLContext.getInstance("SSL");
 					context.init(null, new TrustManager[]{}, null);
 					SSLSocketFactory sf = context.getSocketFactory();
 					
-					HttpsURLConnection httpsURLConnection = (HttpsURLConnection) urlConnection;
-					httpsURLConnection.setSSLSocketFactory(sf);
-					httpsURLConnection.setHostnameVerifier(new HostnameVerifier() {
+					
+					
+					urlConnection.setHostnameVerifier(new HostnameVerifier() {
 	                    @Override
 						public boolean verify(String arg0, SSLSession arg1) {
 							// TODO Auto-generated method stub
 							return true;
 						}
 	                });
-				}
 				
-				//
+				}//if
+				Log.v("hhhhhh","noinstance");
+				/////
 				Map map = null;
 				Object key = null;
 				Iterator it = null;
@@ -83,15 +85,20 @@ public class SampleHttps extends Activity implements X509TrustManager{
 					key = it.next();
 					System.out.println("" + key + " : " + map.get(key));
 					Log.v("print: ", "" + key + " : " + map.get(key));
-				}
-				Log.v("hhhhhh","hhh");
-				//urlConnection.connect();
-				result = IOUtils.toString(urlConnection.getInputStream(),"UTF-8");
-				//urlConnection.disconnect();
+				}//while
+				
+			result = IOUtils.toString(urlConnection.getInputStream(),"UTF-8");
+			
 			} catch (IOException e) {
 				e.printStackTrace();
+				Log.v("hhhhhh","hhh222");
 			} catch (GeneralSecurityException e) {
 				e.printStackTrace();
+				//Log.v("hhhhhh","hhh3");
+			} finally{
+                if (urlConnection != null) {
+                    urlConnection.disconnect();
+                }
 			}
 			return result;	
 		}

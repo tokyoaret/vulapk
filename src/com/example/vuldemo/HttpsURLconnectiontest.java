@@ -55,7 +55,7 @@ public class HttpsURLconnectiontest extends Activity {
 						return true;
 					}
                 });
-                result = IOUtils.toString(urlConnection.getInputStream(),"UTF-8");
+            result = IOUtils.toString(urlConnection.getInputStream(),"UTF-8");
             } catch (IOException e) {
                 e.printStackTrace();
             } finally {
