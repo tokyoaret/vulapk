@@ -93,6 +93,28 @@ public class MainFragment extends Fragment {
 
 
 		});
+		//call sqlitetest
+		myView.findViewById(R.id.button7).setOnClickListener(new OnClickListener() {
+		@Override
+		public void onClick(View view) {
+			Intent i = new Intent(getActivity(),SQLiteTest.class);
+			startActivity(i);	
+		}
+
+
+		});
+		
+		//call sqlitetest
+		myView.findViewById(R.id.button8).setOnClickListener(new OnClickListener() {
+		@Override
+		public void onClick(View view) {
+			Intent i = new Intent(getActivity(),ReadContentProviderTest.class);
+			startActivity(i);
+							
+		}
+
+
+		});
 		
 		return myView;
 	}

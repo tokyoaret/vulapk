@@ -9,5 +9,8 @@
     <string name="title_activity_web_view_test_activity2">WebViewTestActivity2</string>
     <string name="title_activity_http_urlconnection">HttpURLconnection</string>
     <string name="title_activity_sample_https">SampleHttps</string>
+    <string name="title_activity_sqlite_test">SQLiteTest</string>
+    <string name="title_activity_content_provider_test">ContentProviderTest</string>
+    <string name="title_activity_read_content_provider_test">ReadContentProviderTest</string>
 
 </resources>
