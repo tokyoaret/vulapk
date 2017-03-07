@@ -21,14 +21,13 @@
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
             <intent-filter>
-                   <data
+                <data
                     android:host="test"
                     android:scheme="callback" />
-              
             </intent-filter>
         </activity>
 
@@ -101,8 +100,16 @@
             android:name=".ReadContentProviderTest"
             android:label="@string/title_activity_read_content_provider_test" >
         </activity>
-        <provider android:name=".ContentProviderTest" 
-            android:exported="true" android:authorities="com.example.vuldemo.myprovider" />
+
+        <provider
+            android:name=".ContentProviderTest"
+            android:authorities="com.example.vuldemo.myprovider"
+            android:exported="true" />
+
+        <activity
+            android:name=".TouchFilterSample"
+            android:label="@string/title_activity_touch_filter_sample" >
+        </activity>
     </application>
 
 </manifest>

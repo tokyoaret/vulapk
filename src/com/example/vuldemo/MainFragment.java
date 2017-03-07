@@ -115,6 +115,17 @@ public class MainFragment extends Fragment {
 
 
 		});
+		//call obscured
+		myView.findViewById(R.id.button9).setOnClickListener(new OnClickListener() {
+		@Override
+		public void onClick(View view) {
+		Intent i = new Intent(getActivity(),TouchFilterSample.class);
+		startActivity(i);
+									
+				}
+
+
+				});
 		
 		return myView;
 	}
