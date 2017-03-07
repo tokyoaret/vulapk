@@ -3,6 +3,7 @@ package com.example.vuldemo;
 import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -16,10 +17,14 @@ public class WebViewTestActivity2 extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		
 		setContentView(R.layout.activity_webview_test2);
 		///
 		WebView  myWebView = (WebView)findViewById(R.id.webView2);
 		myWebView.getSettings().setJavaScriptEnabled(true);
+		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            WebView.setWebContentsDebuggingEnabled(true);
+        }
 		
 
 		
@@ -33,6 +38,8 @@ public class WebViewTestActivity2 extends Activity {
 		myWebView.loadUrl("file:///android_asset/index.html");
 		
 		//myWebView.getSettings().setAllowFileAccess(false);
+		////webView.getSettings().setAllowFileAccessFromFileURLs(true);
+		////webView.getSettings().setAllowUniversalAccessFromFileURLs(true);
 		//myWebView.loadUrl("file:///default.prop");
 		//myWebView.loadUrl("file:///system/etc/sysmon.cfg");
 		
