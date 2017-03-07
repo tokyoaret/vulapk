@@ -38,8 +38,8 @@ public class WebViewTestActivity2 extends Activity {
 		myWebView.loadUrl("file:///android_asset/index.html");
 		
 		//myWebView.getSettings().setAllowFileAccess(false);
-		////webView.getSettings().setAllowFileAccessFromFileURLs(true);
-		////webView.getSettings().setAllowUniversalAccessFromFileURLs(true);
+		myWebView.getSettings().setAllowFileAccessFromFileURLs(true);
+		myWebView.getSettings().setAllowUniversalAccessFromFileURLs(true);
 		//myWebView.loadUrl("file:///default.prop");
 		//myWebView.loadUrl("file:///system/etc/sysmon.cfg");
 		
