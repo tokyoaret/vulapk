@@ -18,15 +18,15 @@ public class WebViewTestActivity extends Activity {
 		myWebView.getSettings().setJavaScriptEnabled(true);
 		myWebView.loadUrl("https://www.google.co.jp");
 		myWebView.setWebViewClient(new WebViewClient()
-		//in case of not install proxycert.crt
-		//{
-			//@Override  
-		    //public void onReceivedSslError(WebView view, SslErrorHandler handler, SslError error)
-			//{  
-	       //handler.proceed();  
-	        //}  
-		//}
-	);		
+		
+		{
+			@Override  
+		    public void onReceivedSslError(WebView view, SslErrorHandler handler, SslError error)
+			{  
+				handler.proceed();  
+	        }  
+		}
+				);		
 		////////
 		
 		
